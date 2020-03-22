@@ -1,10 +1,10 @@
 # main links
 main:
 
-- title: "Game Development"
-  url: /categories/Game Development/
-- title: "Programming"
-  url: /categories/Programming/
+- #title: "Game Development"
+  #url: /categories/Game Development/
+- #title: "Programming"
+  #url: /categories/Programming/
 
 - title: "Categories"
   url: /categories/
@@ -12,8 +12,8 @@ main:
 - title: "Tags"
   url: /tags/
 
-- title: "ABOUT"
-  url: /about/
+- #title: "ABOUT"
+  #url: /about/
 
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
