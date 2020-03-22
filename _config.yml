@@ -19,12 +19,12 @@ locale                   : "en-US"
 title                    : "Game Developer GYUT"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Lee Gyutae"
+name                     : "Gyutae Lee"
 description              : "게임 개발자 이규태"
 url                      : # the base hostname & protocol for your site e.g. "https://gyutaelee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : "/assets/images/qbot.png"
+teaser                   : ![]({{ site.url }}{{ site.baseurl }}"/assets/images/teaser_kor.png")
 logo                     : "/assets/images/qbot.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 
@@ -97,8 +97,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Lee Gyutae"
-  avatar           : "/assets/images/qbot.jpg"
+  name             : "Gyutae Lee"
+  avatar           : "/assets/images/qbot.png"
   bio              : "게임 개발자 이규태입니다."
   location         : "South Korea"
   email            :
