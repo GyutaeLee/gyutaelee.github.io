@@ -107,7 +107,7 @@ author:
 
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      mailto: gyutae07@gmail.com
+      url: mailto:gyutae07@gmail.com
       
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
