@@ -24,7 +24,8 @@ description              : "게임 개발자 이규태"
 url                      : # the base hostname & protocol for your site e.g. "https://gyutaelee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : ![]({{ site.url }}{{ site.baseurl }}"/assets/images/teaser_kor.png")
+teaser                   : ![]({{ site.url }}{{ site.baseurl }}"/assets/images/teaser_kor.jpg")
+
 logo                     : "/assets/images/qbot.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 
