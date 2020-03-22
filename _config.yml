@@ -26,7 +26,6 @@ url                      : # the base hostname & protocol for your site e.g. "ht
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   :  "/assets/images/teaser_kor.jpg"
-
 logo                     : "/assets/images/qbot.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 
@@ -263,6 +262,7 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
