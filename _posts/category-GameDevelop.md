@@ -1,7 +1,7 @@
 ```
 ---
 title: "게임 개발"
-permalink: /categories/게임 개발/
+permalink: /categories/게임-개발/
 layout: category
 author_profile: true
 taxonomy: 게임 개발
