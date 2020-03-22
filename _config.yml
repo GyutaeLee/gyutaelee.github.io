@@ -101,7 +101,7 @@ author:
   name             : "Gyutae Lee"
   avatar           : "/assets/images/qbot.png"
   bio              : "게임 개발자 이규태입니다."
-  location         : "South Korea"
+  location         : "South Korea. Seoul"
   email            :
   links:
 
@@ -112,18 +112,10 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/GyutaeLee"
-      
-      # url: "https://twitter.com/"
-      
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      
-      # url: "https://facebook.com/"
-      
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      
-      # url: "https://github.com/GyutaeLee"
+        
+    - label: "Tistory"
+      icon: "fas fa-fw fa-link"
+      url: "https://gyutts.tistory.com"
       
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
