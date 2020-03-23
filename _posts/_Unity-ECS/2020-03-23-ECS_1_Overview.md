@@ -21,7 +21,7 @@ last_modified_at: 2020-03-23
 
  문서와 튜토리얼을 마친 후에는 간단한 연습 프로젝트를 하나 진행하고, 후에는 해당 시스템과 URP(Universal Render Pipeline)을 곁들인 프로젝트를 진행하는 것이 최종 목표이다. (URP 부분 스터디는 함께 프로젝트를 진행할 동료가 공부를 하고, 서로 알려주기로 했음)
 
- 어떤 프로젝트를 진행할지는 아직 정하지 않았지만, 어디에 내놓아도 멋있을만한 포트폴리오를 만드는 것이 목표이다...! 화이팅!
+ 어떤 프로젝트를 진행할지는 아직 정하지 않았지만, 어디에 내놓아도 멋있을만한 포트폴리오를 만드는 것이 목표이다...! 화이팅!     
 
   
 
@@ -41,7 +41,7 @@ Entity Component System
 - **Entity** : 게임이나 프로그램을 채우는 Entity 또는 Things
 - **Components** : Entity와 관련이 있지만 Entity가 아닌 Data 자체로 구성되는 data이다.  (이 조직의 차이점은 객체 지향 디자인과 데이터 지향 디자인의 주요 차이점 중 하나이다.)
 
-- **Systems** : 구성 요소 데이터를 현재 상태에서 다음 상태로 변환하는 로직이다. 예를 들어, 시스템은 모든 이동 엔티티의 위치를 이전 프레임 이후의 시간 간격으로 곱해 업데이트 할 수 있다.
+- **Systems** : 구성 요소 데이터를 현재 상태에서 다음 상태로 변환하는 로직이다. 예를 들어, 시스템은 모든 이동 엔티티의 위치를 이전 프레임 이후의 시간 간격으로 곱해 업데이트 할 수 있다.    
 
   
 
@@ -104,7 +104,7 @@ Adding and Removing Components
 Iterating entities
 ----
 
- 일치하는 component 세트가 있는 모든 entity를 반복하는 것은 ECS 아키텍처의 중심에 있다. [Accessing entity Data]( https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/chunk_iteration.html ) 목차를 참조해라.
+ 일치하는 component 세트가 있는 모든 entity를 반복하는 것은 ECS 아키텍처의 중심에 있다. [Accessing entity Data]( https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/chunk_iteration.html ) 목차를 참조해라.    
 
   
 
@@ -120,7 +120,7 @@ World
 - **Default World creation code** (see file:
   *Packages/com.unity.entities/Unity.Entities.Hybrid/Injection/DefaultWorldInitialization.cs*) 
 - **Automatic boostrap entry point** (see file:
-  *Packages/com.unity.entities/Unity.Entities.Hybrid/Injection/AutomaticWorldBootstrap.cs*) 
+  *Packages/com.unity.entities/Unity.Entities.Hybrid/Injection/AutomaticWorldBootstrap.cs*)     
 
   
 
@@ -130,7 +130,7 @@ World
 
 ---
 
-  
+​      
 
   
 
