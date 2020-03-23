@@ -1,6 +1,6 @@
 ---
 title: "ECS_1_Overview"
-excerpt: "ECS 정리"
+excerpt: "Entity Component System : Overview"
 
 categories:
 - Game Development
@@ -15,7 +15,7 @@ last_modified_at: 2020-03-23
 
 
 
-
+> 시작하면서
 
  Unity3D에서 최근에 생긴 시스템인 ECS(Entity Component System)을 공부해서 사용해보려고 한다. 우선 처음에는 역시 유니티 공식 문서와 튜토리얼을 보면서 하는게 좋을 것 같아서 유니티 공식 문서부터 번역하며 공부하려고 한다!
 
@@ -23,11 +23,15 @@ last_modified_at: 2020-03-23
 
  어떤 프로젝트를 진행할지는 아직 정하지 않았지만, 어디에 내놓아도 멋있을만한 포트폴리오를 만드는 것이 목표이다...! 화이팅!
 
+  
 
+  
 
 ---
 
-(https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/index.html)
+---
+
+[Unity Original Document Link](https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/index.html)
 
 Entity Component System
 ----
@@ -39,13 +43,13 @@ Entity Component System
 
 - **Systems** : 구성 요소 데이터를 현재 상태에서 다음 상태로 변환하는 로직이다. 예를 들어, 시스템은 모든 이동 엔티티의 위치를 이전 프레임 이후의 시간 간격으로 곱해 업데이트 할 수 있다.
 
+  
 
-
-
+  
 
 ---
 
-(https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/ecs_entities.html)
+[Unity Original Document](https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/ecs_entities.html)
 
 Entities
 ----
@@ -58,14 +62,14 @@ Entity는 엔티티 구성 요소 시스템 아키텍처의 세 가지 기본 �
 
  Entity에는 유형이 없지만 엔티티 그룹은 관련 데이터 구성 요소의 유형으로 분류 할 수 있다. 엔티티를 만들고 구성 요소를 추가 할 때 EntityManager는 기존 엔티티에서 구성 요소의 고유한 조합을 추적한다. 이러한 고유한 조합을 Archetype이라고 한다. 엔티티에 구성 요소를 추가하면 EntityManager가 EntityArchetype 구조체를 만든다. 기존 EntityArchetypes를 사용해 해당 아키 타입에 맞는 새 엔티티를 만들 수 있다. EntityArchetype을 미리 만들고 이를 사용해 엔티티를 만들 수도 있다.
 
-
+  
 
 Creating Entities
 ----
 
   Entity를 생성하는 가장 쉬운 방법은 Unity 에디터이다. 씬에 배치된 게임 오브젝트와 프리 팹을 런타임에 엔티티로 변환하도록 설정할 수 있다. 게임이나 프로그램의 보다 역동적인 부분을 위해 작업에서 여러 엔티티를 만드는 스폰 시스템을 만들 수 있다. 마지막으로 EntityManager.CreateEntity 함수 중 하나를 사용해 한 번에 하나씩 엔티티를 작성할 수 있다.
 
-
+  
 
 Creating Entities with an EntityManager
 ----
@@ -84,7 +88,7 @@ Creating Entities with an EntityManager
 - Instantiate를 사용해 현재 데이터를 포함해 기존 entity의 복사본으로 NativeArray를 채운다.
 - CreateChunk를 사용해 지정된 Archetype으로 지정된 수의 엔티티로 채워진 청크를 명시적으로 만든다.
 
-
+  
 
 Adding and Removing Components
 ----
@@ -95,16 +99,16 @@ Adding and Removing Components
 
  EntityManager는 NativeArray의 모든 entity 뿐만 아니라 단일 entity에서 component를 제거하는 기능을 제공한다. 자세한 내용은 [Components]( https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/ecs_components.html )를 참조해라.
 
-
+  
 
 Iterating entities
 ----
 
  일치하는 component 세트가 있는 모든 entity를 반복하는 것은 ECS 아키텍처의 중심에 있다. [Accessing entity Data]( https://docs.unity3d.com/Packages/com.unity.entities@0.0/manual/chunk_iteration.html ) 목차를 참조해라.
 
+  
 
-
-
+  
 
 World
 ----
@@ -118,13 +122,19 @@ World
 - **Automatic boostrap entry point** (see file:
   *Packages/com.unity.entities/Unity.Entities.Hybrid/Injection/AutomaticWorldBootstrap.cs*) 
 
+  
 
+  
 
-
+---
 
 ---
 
----
+  
+
+  
+
+> 마무리
 
  솔직히 아직 이 파트만 봐서는 무슨 말인지 명확하게 이해가 가지 않는다... 문서를 쭉 읽어가면서 튜토리얼도 병행해야지 이해가 좀 더 빠를듯 싶다. 하지만 새로운 개념을 배워가는 것은 언제나 즐겁다. 힘내자!
 
