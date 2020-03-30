@@ -1,6 +1,6 @@
 ---
-title: "ECS_Tutorial. Make an RTS with Unity's Entity Component System"
-excerpt: "Pure ECS Tutorial(Make an RTS)"
+title: "ECS Tutorial - RTS"
+excerpt: "Make an RTS with Unity's Entity Component System"
 
 categories:
 - Game Development
