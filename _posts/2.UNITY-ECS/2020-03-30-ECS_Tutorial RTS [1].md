@@ -1,5 +1,5 @@
 ---
-title: "ECS Tutorial - RTS"
+title: "ECS Tutorial - RTS [1]"
 excerpt: "Make an RTS with Unity's Entity Component System"
 
 categories:
@@ -61,4 +61,5 @@ last_modified_at : 2020-03-03
 **추천 링크**
 
 [ReleaseNotes]( https://github.com/Unity-Technologies/EntityComponentSystemSamples/blob/master/ECSSamples/ReleaseNotes.md ) : Untiy ECS 릴리즈노트 (수정 안 되있는 부분도 많다. 그런 부분은 구글링!)
+
 [Unity ECS 정리본]( https://github.com/KorStrix/Unity_Study_ECS ) : "KorStrix"라는 분이 ECS 관련 자료를 잘 정리해주신 링크
