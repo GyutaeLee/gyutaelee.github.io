@@ -29,7 +29,7 @@ last_modified_at : 2020-03-03
 
 [commit link](https://github.com/GyutaeLee/CG_SHOOT/commit/866956e42e4e6ef785746ea263b6a89b75f274ab)
 
-![ECS_RTS_Tutorial_00](..\..\assets\images\ECS\ECS_RTS_Tutorial_00.PNG)
+<img src="..\..\assets\images\ECS\ECS_RTS_Tutorial_00.PNG" alt="ECS_RTS_Tutorial_00" style="zoom:200%;" />
 
  2019.3.x 버전으로 올라오면서 "RenderBoudns" 추가가 필요해졌고, 튜토리얼에는 없었는데 버전이 올라오면서 "LocalToWorld"가 생긴 것을 구글링을 통해 겨우 찾았다.    
 ** 관련 링크 : [1]( https://answers.unity.com/questions/1701725/ecs-rendermesh-not-work.html ) / [2]( https://forum.unity.com/threads/the-entities-is-not-visible.674518/ )    
