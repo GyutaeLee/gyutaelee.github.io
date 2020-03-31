@@ -7,8 +7,7 @@ categories:
 
 tags:
 - Unity
-- C#
-- ECS
+- ECS Tutorial
 
 last_modified_at: 2020-03-23
 ---

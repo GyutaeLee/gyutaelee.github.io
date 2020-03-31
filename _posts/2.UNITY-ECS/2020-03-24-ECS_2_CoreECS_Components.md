@@ -7,7 +7,6 @@ categories:
 
 tags:
 - Unity
-- C#
 - ECS
 
 last_modified_at: 2020-03-24
@@ -85,7 +84,7 @@ See file:  : */Packages/com.unity.entities/Unity.Entities/IComponentData.cs*
 
   
 
-Shared ComponentData
+Shared Component Data
 ====
 
  IComponentData는 World position 저장과 같이 Entity마다 다른 데이터에 적합하다. ISharedComponentData는 많은 엔티티에 공통점이 있는 경우에 유용하다. 예를 들어 Boid 데모에서는 동일한 프리팹에서 많은 entity를 인스턴스화하므로 많은 Boid entity 간의 RenderMesh가 정확히 동일한 경우이다.

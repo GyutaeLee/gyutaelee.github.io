@@ -7,7 +7,6 @@ categories:
 
 tags:
 - Unity
-- C#
 - ECS
 
 last_modified_at: 2020-03-23
