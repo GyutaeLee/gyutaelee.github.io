@@ -16,7 +16,7 @@ last_modified_at : 2020-03-03
 
  원래는 문서를 모두 읽고 코드  작성을 해볼 생각이었지만, 문서를 읽다보니 머리에 잘 들어오지 않았다. 그래서 예제가 될만한 튜토리얼들을 구글링해보았다. 하지만 안타깝게도 최근 들어서 많은 업데이트가 있었고, 비교적 짧다고 생각되는 1년 지난 튜토리얼들도 코드와 유니티 버전, 패키지 버전들이 상이해서 대부분이 제대로 사용하기가 힘들었다. 그 중에서 가장 최근이고, 시작하기에 알맞은 튜토리얼을 하나 찾았다.
 
-[[ECS Tutorial] Making an RTS with Unity's Entity Component System](https://www.youtube.com/watch?v=36Q6HO19O6U&list=PL13LVknaRwqyN4vKyeZwjcVlkjuvYgYwq&index=1)
+[[ECS Tutorial] Making an RTS with Unity's Entity Component System [1]](https://www.youtube.com/watch?v=36Q6HO19O6U&list=PL13LVknaRwqyN4vKyeZwjcVlkjuvYgYwq&index=1)
 
  소스코드도 친절하게 깃에 업로드 되어 있고, 비교적 최근 버전인 상태여서 오류도 적었다(하지만 첫 영상부터 바뀐 소스가 많은 것은 함정).    
 
