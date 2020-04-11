@@ -1,13 +1,12 @@
 ---
 title: "ECS_3_CoreECS_Systems"
-excerpt: "Entity Component System : Components"
+excerpt: "Entity Component System : System"
 
 categories:
 - Game Development
 
 tags:
 - Unity
-- C#
 - ECS
 
 last_modified_at : 2020-04-11
