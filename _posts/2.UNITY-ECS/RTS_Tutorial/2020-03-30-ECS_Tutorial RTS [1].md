@@ -28,14 +28,14 @@ last_modified_at : 2020-03-03
 
 [commit link](https://github.com/GyutaeLee/CG_SHOOT/commit/866956e42e4e6ef785746ea263b6a89b75f274ab)
 
-<img src="..\..\assets\images\ECS\ECS_RTS_Tutorial_00.PNG" alt="ECS_RTS_Tutorial_00" style="zoom:200%;" />
+<img src="..\..\..\assets\images\ECS\RTS_Tutorial\ECS_RTS_Tutorial_00.PNG" alt="ECS_RTS_Tutorial_00" style="zoom:200%;" />
 
  2019.3.x 버전으로 올라오면서 "RenderBoudns" 추가가 필요해졌고, 튜토리얼에는 없었는데 버전이 올라오면서 "LocalToWorld"가 생긴 것을 구글링을 통해 겨우 찾았다.    
 ** 관련 링크 : [1]( https://answers.unity.com/questions/1701725/ecs-rendermesh-not-work.html ) / [2]( https://forum.unity.com/threads/the-entities-is-not-visible.674518/ )    
 
  이를 수정하고 큐브 3개를 정상적으로 띄웠다.    
 
-![ECS_RTS_Tutorial_01.PNG](..\..\assets\images\ECS\ECS_RTS_Tutorial_01.PNG)
+![ECS_RTS_Tutorial_01.PNG](..\..\..\assets\images\ECS\RTS_Tutorial\ECS_RTS_Tutorial_01.PNG)
 
  사진을 잘 보면 알겠지만 이전 유니티로 작업한 것과는 다르게 Hierarchy에 생성한 큐브들이 보이지 않는다. GameObject가 아닌 Entity로 생성되서 그런듯하다.    
 

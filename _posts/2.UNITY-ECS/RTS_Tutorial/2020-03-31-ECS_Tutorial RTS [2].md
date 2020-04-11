@@ -24,7 +24,7 @@ last_modified_at : 2020-03-31
 
  역시나 이번 프로젝트도 바뀐게 여러개 많았다. 하지만 무난하게 릴리즈 노트와 구글링으로 변경된 키워드들을 바꾸어가면서 해결했다. 하지만 ISharedComponentData와 관련된 이슈는 해결하지 못했다. 다음 오류이다.
 
-<img src="..\..\assets\images\ECS\ECS_RTS_Tutorial_02.PNG" alt="ECS_RTS_Tutorial_02">
+<img src="..\..\..\assets\images\ECS\RTS_Tutorial\ECS_RTS_Tutorial_02.PNG" alt="ECS_RTS_Tutorial_02">
 
 ```
 ArgumentException: type UnitSpawner is a ISharedComponentData and has managed references, you must implement IEquatable<T>
@@ -38,7 +38,7 @@ ArgumentException: Unknown Type:`UnitSpawner` All ComponentType must be known at
 
  해당 이슈에 관해서 구글링을 해보면 compile 이전에 component type을 선언해주어야 한다해서 다음 코드를 입력하라고 했다.
 
-```c#
+```
 [assembly: RegisterGenericComponentType(typeof(UnitSpawner))]
 ```
 
