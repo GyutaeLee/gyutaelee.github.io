@@ -116,7 +116,7 @@ return min
 　RANDOMIZED-SELECT는 RANDOMIZED-PARTITION 절차를 사용한다. 따라서 RANDMOIZED-QUICKSORT와 같이 동작은 난수 생성기의 출력에 의해 부분적으로 결정되므로 무작위 알고리즘이다. RANDOMIZED-SELECDT에 대한 다음 코드는 배열 A[p..r]의 가장 작은 i번째 요소를 반환한다.
 
 ```
-RANDOMIZED-SELECDT(A, p, r, i)
+RANDOMIZED-SELECT(A, p, r, i)
 if p == r
     return A[p]
 q = RANDOMIZED-PARTITION(A, p, r)
@@ -127,6 +127,25 @@ else if i < k
 	return RANDOMIZED-SELECT(A, p, q - 1, i)
 else
 	return RANDOMIZED-SELECDT(A, q + 1, r, i - k)
+```
+
+```
+RANDOMIZED-PARTITION(A, p ,r)
+i = RANDOM(p,r)
+exchange A[r] with A[i]
+return PARTITION(A, p ,r)
+```
+
+```
+PARTITION(A, p, r)
+x = A[r]
+i = p-1
+for j = p to r-1
+	if A[j] <= x
+		i = i+1
+		exchange A[i] with A[j]
+exchange A[i+1] with A[r]
+return i+1
 ```
 
 　RANDOMIZED-SELECT 절차는 다음과 같이 작동한다.
@@ -192,12 +211,48 @@ n이 짝수면 합에서 T([n/2])부터 T(n-1)까지 나오는 각 항은 정확
 
 > 3) Selection in worst-case linear time
 
-​    http://egloos.zum.com/itfs/v/9983164
+　이제 최악의 경우 실행 시간이  O(n)인 선택 알고리즘을 보자. RANDOMIZED-SELECT와 마찬가지로 SELECT 알고리즘은 입력 배열을 재귀적으로 분할해 원하는 요소를 찾는다. 그러나 여기서는 배열을 분할 할 때 양호한 분할을 보장한다. SELECT는 퀵 정렬의 결정적 파티셔닝 알고리즘 PARTITION을 사용하지만 요소를 입력 매개 변수로 파티셔닝하도록 수정했다.
 
+　SELECT 알고리즘은 다음 단계를 실행해 n > 1개의 개별 요소로 구성된 입력 배열 중 가장 작은 것을 결정한다. (n = 1인 경우 SELECT는 입력 값을 i번째로 작을 값만 반환한다.)
 
+1. 입력 배열의 n개의 요소를 각각 5개의 요소로 구성된  ⌊n/5⌋개의 그룹과 나머지 n개의 mod 5 요소로 구성된 최대 하나의 그룹으로 나눈다.
+2. 각 그룹의 요소를 먼저 삽입 정렬 (최대 5개) 한 다음 정렬된 그룹 요소 목록에서 중간값을 선택해 각 ⌈n/5⌉ 그룹의 중앙값을 찾아라.
+3. SELECT를 재귀적으로 사용해 2단계에서 찾은  ⌈n/5⌉ 중앙값의 중앙값 x를 찾아라. (짝수의 중앙값이 있는 경우 규칙에 따라 x는 하단 중앙값이다.)
+4. 수정된 PARTITION 버전을 사용해 중앙값 x의 입력 배열을 분할해라. k는 파티션의 아래쪽에 있는 요소의 수보다 하나 이상이 되도록해 x는 k번째로 가장 작은 요소이고, n은 k에 해당한다.
+5. i = k 이면 x를 반환한다. 그렇지 않으면 SELECT를 재귀적으로 사용해 i < k인 경우 낮은 쪽에서 i번째로 작은 요소를 찾거나, i > k 인 경우 높은 쪽에서 가장 작은 i번째 요소를 찾는다.
+
+　SELECT의 실행 시간을 분석하기 위해 먼저 파티셔닝 요소 x보다 큰 요소 수의 하한을 결정한다. 그림 9.1은 이 bookkeeping을 시각화하는데 도움이 된다. 단계 2에서 발견된 중앙값의 적어도 절반은 중앙값 x 이상이다.
+
+![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_07.png) 그림 9.1
+
+　위 그림을 보자. 각 요소는 작은 원으로 표시되고, 5개 요소로 구성된 각 집단은 하나의 열로 이루어진다. 집단의 중앙값은 흰색으로 칠해지고, x는 따로 표시되어 있다. 화살은 큰 요소에서 작은 요소로 향해 간다. x의 오른쪽에 있는 각 그룹의 요소 3개는 x보다 크고, x의 왼쪽에 있는 각 그룹의 요소 3개는 x보다 작다. x보다 큰 요소는 그림에서 회색 배경으로 나타나 있다.
+
+　따라서,  ⌈n/5⌉ 그룹의 적어도 절반은 x가 n을 정확하게 나누지 않는 경우 5개보다 적은 요소를 갖는 하나의 그룹과 x 자체를 포함하는 하나의 그룹을 제외하고 x보다 큰 3개 이상의 요소를 기여한다. 이 두 그룹을 빼면 x보다 큰 요소의 수는 최소한
+
+​    ![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_08.png)
+
+유사하게, 3n/10 - 6 이상의 원소는 x보다 작다. 따라서 최악의 경우 5단계는 최대 7n/10 + 6 요소에서 SELECT를 재귀적으로 호출한다.
 
 ​    
 
-> 마치며
+　이제 알고리즘 SELECT의 최악의 실행 시간 T(n)에 대한 반복을 개발할 수 있다. 1,2,4단계는 O(n) 시간이 걸린다.
 
-　
+(2단계는 크기 O(1) 세트에 대한 삽입 정렬의  O(n) 호출로 구성됨)
+
+　단계 3은 T가 단조 증가한다고 가정 할 때 T ((n / 5⌉)의 시간이 걸리고, 5단계는 최대 T(7n/10 + 6)의 시간이 걸린다. 140개보다 적은 요소를 입력하려면 O(1) 시간이 필요하다고 가정한다. magic 상수 140의 기원은 곧 명확해 질 것이다. 따라서 우리는 다음 식을 얻을 수 있다.
+
+![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_09.png)
+
+　우리는 실행 시간이 치환을 통해 선형임을 보여준다. 보다 구체적으로, 우리는 적당히 큰 상수 c에 대해 T(n) <= cn이고, 모든 n > 0임을 보여줄 것이다. 우리는 적당히 큰 상수 c에 대해 T(n) <= cn이고, n < 140 이라고 가정하고 시작한다.
+
+　c가 충분히 크면 가정이 유지된다. 또한, 위의 O(n) 항에 의해 설명된 함수가 모두 n > 0 에 대해 위에 묶여있는 상수를 선택한다. 이 귀납 가설을 반복 right-hand 대입하면 다음 식이 산출된다.
+
+![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_10.png)
+
+위 식은 다음 식을 만족하면 최대 cn이다.
+
+***-cn/10 + 7c + an <= 0 (9.2)***
+
+　n > 70일 때, 식 (9.2)는 c >= 10a(n/(n-70))과 동치이다. n >= 140이라고 가정했기 때문에 n/(n-70) <= 2이고, c >= 20a는 부등식 (9.2)를 만족한다. 따라서 SELECT의 알고리즘의 최악인 경우 실행 시간은 선형적이다.
+
+- 정리 : sorting & indexing으로 SELECT 문제를 해결하려고 하는 것은 점근적이므로 비효율적이다.
