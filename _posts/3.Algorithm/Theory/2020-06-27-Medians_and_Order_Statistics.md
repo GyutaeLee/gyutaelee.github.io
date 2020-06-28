@@ -176,19 +176,19 @@ return i+1
 
 　상계를 정하기 위해서 배열 분할시 항상 더 많은 요소를 가진 쪽에 i번째 요소가 존재한다고 가정한다. RANDOMIZED-SELECT 호출시, 확률 지표 변수 Xk는 k값으로 정해진 하나의 값에 대해 1을 가지고, 나머지 모든 값에는 0을 가진다. Xk = 1일 때, 두 개의 부분 배열은 k-1과 n-k 크기를 가진다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_01.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_01.png)
 
 기대값을 양쪽에 취하면 다음을 가진다
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_02.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_02.png)
 
 식 (C.24) : E[X1X2...Xn] = E[X1]E[X2]...E[Xn] 일 때 T(max(k-1, n-k))를 분석해보자.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_03.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_03.png)
 
 n이 짝수면 합에서 T([n/2])부터 T(n-1)까지 나오는 각 항은 정확히 두 번씩 나타난다. n이 홀수이면 각 항이 두 번씩 나오다가 마지막에 T([n/2])이 추가로 한 번 나타난다. 따라서 다음 식을 갖는다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_04.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_04.png)
 
 치환법으로 E[T(n)] = O(n)임을 증명한다.
 
@@ -197,11 +197,11 @@ n이 짝수면 합에서 T([n/2])부터 T(n-1)까지 나오는 각 항은 정확
   2. T(n) = O(1)
   3. O(n) = an
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_05.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_05.png)
 
 충분히 큰 n에 대해 마지막 표현식은 최대 cn임을 보여야한다. 즉, c*n/4 - c/2 - a\*n >= 0 임을 보여야한다. 이 식을 정리하면 다음과 같다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_06.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_06.png)
 
  따라서 n < 2*c/(c-4\*a)에 대해 T(n) = O(1) 이라고 가정하면,  E[T(n)] = O(n)이 나온다. 따라서 선형 시간에 순서 통계량을 찾을 수 있다.
 
@@ -223,13 +223,13 @@ n이 짝수면 합에서 T([n/2])부터 T(n-1)까지 나오는 각 항은 정확
 
 　SELECT의 실행 시간을 분석하기 위해 먼저 파티셔닝 요소 x보다 큰 요소 수의 하한을 결정한다. 그림 9.1은 이 bookkeeping을 시각화하는데 도움이 된다. 단계 2에서 발견된 중앙값의 적어도 절반은 중앙값 x 이상이다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_07.png) 그림 9.1
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_07.png) 그림 9.1
 
 　위 그림을 보자. 각 요소는 작은 원으로 표시되고, 5개 요소로 구성된 각 집단은 하나의 열로 이루어진다. 집단의 중앙값은 흰색으로 칠해지고, x는 따로 표시되어 있다. 화살은 큰 요소에서 작은 요소로 향해 간다. x의 오른쪽에 있는 각 그룹의 요소 3개는 x보다 크고, x의 왼쪽에 있는 각 그룹의 요소 3개는 x보다 작다. x보다 큰 요소는 그림에서 회색 배경으로 나타나 있다.
 
 　따라서,  ⌈n/5⌉ 그룹의 적어도 절반은 x가 n을 정확하게 나누지 않는 경우 5개보다 적은 요소를 갖는 하나의 그룹과 x 자체를 포함하는 하나의 그룹을 제외하고 x보다 큰 3개 이상의 요소를 기여한다. 이 두 그룹을 빼면 x보다 큰 요소의 수는 최소한
 
-​    ![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_08.png)
+​    ![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_08.png)
 
 유사하게, 3n/10 - 6 이상의 원소는 x보다 작다. 따라서 최악의 경우 5단계는 최대 7n/10 + 6 요소에서 SELECT를 재귀적으로 호출한다.
 
@@ -241,13 +241,13 @@ n이 짝수면 합에서 T([n/2])부터 T(n-1)까지 나오는 각 항은 정확
 
 　단계 3은 T가 단조 증가한다고 가정 할 때 T ((n / 5⌉)의 시간이 걸리고, 5단계는 최대 T(7n/10 + 6)의 시간이 걸린다. 140개보다 적은 요소를 입력하려면 O(1) 시간이 필요하다고 가정한다. magic 상수 140의 기원은 곧 명확해 질 것이다. 따라서 우리는 다음 식을 얻을 수 있다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_09.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_09.png)
 
 　우리는 실행 시간이 치환을 통해 선형임을 보여준다. 보다 구체적으로, 우리는 적당히 큰 상수 c에 대해 T(n) <= cn이고, 모든 n > 0임을 보여줄 것이다. 우리는 적당히 큰 상수 c에 대해 T(n) <= cn이고, n < 140 이라고 가정하고 시작한다.
 
 　c가 충분히 크면 가정이 유지된다. 또한, 위의 O(n) 항에 의해 설명된 함수가 모두 n > 0 에 대해 위에 묶여있는 상수를 선택한다. 이 귀납 가설을 반복 right-hand 대입하면 다음 식이 산출된다.
 
-![img](C:\Users\134461\Desktop\_GYUTAE\_PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_10.png)
+![img](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\MediansAndOrderStatistics_10.png)
 
 위 식은 다음 식을 만족하면 최대 cn이다.
 
