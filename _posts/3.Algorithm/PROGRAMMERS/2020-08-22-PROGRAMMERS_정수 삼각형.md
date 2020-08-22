@@ -6,7 +6,7 @@ categories:
 - Algorithm
 
 tags:
-- BOJ
+- PROGRAMMERS
 ---
 
 > 시작하면서
