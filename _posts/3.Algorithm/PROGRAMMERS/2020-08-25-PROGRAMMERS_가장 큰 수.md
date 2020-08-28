@@ -21,7 +21,7 @@ tags:
 
    문제를 읽어보자. 먼저 이 문제에서 나오는 변수는 총 1가지이다.
 
-- vector<int> numbers : 주어진 정수 벡터
+- vector\<int> numbers : 주어진 정수 벡터
 
 ​    
 
