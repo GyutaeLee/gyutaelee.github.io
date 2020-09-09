@@ -53,45 +53,36 @@ Red-Black Tree
 ​	레드-블랙 트리의 삽입은 단순 이진 탐색 트리에서 하는 것과 같이 노드를 삽입하고, 색을 붉은색으로 정하는 것으로 시작한다. 그 다음 단계는 주위 노드의 색에 따라 달라진다. 여기서 '삼촌 노드(uncle node)'를 도입할텐데, 이는 같은 높이에 있는 옆 노드의 부모 노드를 뜻한다. 여기서 레드-블랙 트리의 특성이 추가된다.
 
 - 특성 3(모든 리프 노드들은 검정색이다)은 언제나 변하지 않는다.
-
 - 특성 4(적색 노드의 모든(두) 자식은 검정색이다)는 적색 노드의 추가, 검정색 노드의 적색 노드로의 전환, 회전에 의해서 제대로 지켜지지 않는 상황이 된다.
-
 - 특성 5(어떤 노드로부터 시작되어 리프 노드에 도달하는 모든 경로에는 모두 같은 개수의 블랙 노드가 있다)는 검정색 노드의 추가, 적색 노드의 검정색 노드로의 전환, 회전에 의해서 제대로 지켜지지 않는 상황이 된다.
-
 - N : 삽입하는 원소
-
 - P : N의 부모 노드
-
 - G : P의 부모 노드
-
 - U : N의 삼촌 노드
 
-  ```c++
-  struct node *grandparent(struct node *n)
-  {
-  if ((n != NULL) && (n->parent != NULL))
-      return n->parent->parent;
-  else
-      return NULL;
-  }
-  ```
+```c++
+struct node *grandparent(struct node *n)
+{
+    if ((n != NULL) && (n->parent != NULL))
+        return n->parent->parent;
+    else
+        return NULL;
+}
 
+struct node *uncle(struct node *n)
+{
+    if (n == NULL)
+		return NULL;
 
-​        
-​    struct node *uncle(struct node *n)
-​    {
-​        if (n == NULL)
-​    		return NULL;
-​    	
-
-    	struct node *g = grandeparent(n);
-        if (g == NULL)
-            return NULL; // 할아버지가 없으면 삼촌도 없다
-        if (n->parent == g->left)
-            return g->right;
-        else
-        	return g->left;	
-    }
+	struct node *g = grandeparent(n);
+    if (g == NULL)
+        return NULL; // 할아버지가 없으면 삼촌도 없다
+    if (n->parent == g->left)
+        return g->right;
+    else
+    	return g->left;	
+}
+```
 
 ​    
 
