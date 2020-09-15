@@ -1,4 +1,4 @@
-# Welcome to Jekyll!
+﻿# Welcome to Jekyll!
 #
 
 # This config file is meant for settings that affect your entire site, values
@@ -21,7 +21,7 @@ title                    : "Game Development"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Gyutae Lee"
-description              : "게임 개발자 이규태"
+description              : "개발자 이규태"
 url                      : # the base hostname & protocol for your site e.g. "https://gyutaelee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -100,7 +100,7 @@ analytics:
 author:
   name             : "Gyutae Lee"
   avatar           : "/assets/images/qbot.png"
-  bio              : "게임 개발자 이규태입니다."
+  bio              : "개발자 이규태입니다."
   location         : "South Korea. Seoul"
   email            :
   links:
