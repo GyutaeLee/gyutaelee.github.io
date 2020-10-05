@@ -9,9 +9,6 @@ tags:
 - Introduction To Algorithms
 ---
 
-Dynamic Programming
----
-
 Matrix chain multiplication
 ---
 
