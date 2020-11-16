@@ -24,7 +24,7 @@ Augmenting Data Structres
 
 ​	9장에서는 order statistic의 개념을 소개했다. 특히 n개 요소 집합의 i번째 순서 통계에 관해서 소개했다(i가 {1, 2, ..., n} 집합에서 가장 작은 요소). 순서가 지정되지 않은 세트에서 O(n) 시간에 order statistic을 결정하는 방법을 보았다. 이 섹션에서는 O(logn)시간에 동적 집합에 대한 순서 통계를 결정할 수 있도록 Red-Black 트리를 수정하는 방법을 살펴보자. 또한, O(logn)시간에서 요소의 순위(집합의 선형 순서에서의 위치)를 계산하는 방법을 살펴볼 것이다.
 
-![AugmentingDataStructre_01](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\AugmentingDataStructre_01.png)
+![AugmentingDataStructre_01](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\AugmentingDataStructre_01.png)
 
 **Figure 14.1** *확장된 Red-Black Tree (order-statistic tree). 음영 처리된 노드는 빨간색이고, 어두운 노드는 검은색이다. 일반적인 속성 외에도 각 노드 x에는 x에 뿌리를 둔 서브 트리에서 sentinel이 아닌 노드의 number인 x, size가 있다.*
 
@@ -45,7 +45,7 @@ x.size = x.elft.size + s.right.size + 1
 ```
 node OS-SELECT(x, i)
 {
-  r = x.left.size + 1
+	r = x.left.size + 1
 	if i == r
 		return x
 	elseif i < r
@@ -73,9 +73,9 @@ int OS-RANK(T, x)
 	r = x.left.size + 1
 	y = x
 	while y != T.root
-			if y == y.p.right
-					r = r + y.p.left.size + 1
-			y = y.p
+		if y == y.p.right
+			r = r + y.p.left.size + 1
+		y = y.p
 	return r
 }
 ```
@@ -95,11 +95,11 @@ int OS-RANK(T, x)
 ​	예를 들어 그림 14.1의 order stastics tree에서 OS-RANK를 실행해 38번 키가 있는 노드의 순위를 찾을 때 while 루프의 맨 위에 있는 y.key 및 r값의 다음 시퀀스를 얻는다:
 
 ```
-iteration 	y.key			r
-		1					38			2
-		2					30			4
-		3					41			4
-		4					26			17
+iteration 	y.key         r
+	1		38			2
+	2		30			4
+	3		41			4
+	4		26			17
 ```
 
 procedure는 17 rank를 반환한다.
@@ -123,7 +123,7 @@ y.size = x.size
 x.size = x.left.size + x.right.size + 1
 ```
 
-![AugmentingDataStructre_02](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Algorithm\IntroductiionToAlgorithm\AugmentingDataStructre_02.png)
+![AugmentingDataStructre_02](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\AugmentingDataStructre_02.png)
 
 **Figure 14.2** *회전 중 하위 트리 크기 업데이트. 우리가 회전하는 링크는 크기 속성을 업데이트 해야하는 두 노드에서 발생한다. 업데이트는 로컬이므로 x, y에 저장된 크기 정보와 삼각형으로 표시된 하위 트리의 루트만 필요하다.*
 
