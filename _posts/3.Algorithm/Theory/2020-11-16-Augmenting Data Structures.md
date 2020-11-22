@@ -1,6 +1,6 @@
 ---
-title: "Augmenting Data Structure"
-excerpt: "Red-Black Tree"
+title: "Red-Black Tree & Interval Tree"
+excerpt: "Augmenting Data Structure"
 
 categories:
 - Algorithm
@@ -9,10 +9,10 @@ tags:
 - Introduction To Algorithms
 ---
 
-Augmenting Data Structres
+Augmenting Data Structure
 ---
 
-> 14. Augmenting Data Structres
+> 14. Augmenting Data Structures
 
 ​	doubly linked list, hash table, binary search tree와 같은 일부 엔지니어링 상황에는 "교과서" 데이터 구조만 필요하지만, 다른 많은 경우에는 창의력이 필요하다. 하지만 드문 경우에만 완전히 새로운 유형의 데이터 구조를 생성해야 한다. 더 자주, 추가 정보를 저장해 교과서 데이터 구조를 보강하는 것으로 충분하다. 그런 다음 원하는 응용 프로그램을 지원하도록 데이터 구조에 대한 새 작업을 프로그래미 할 수 있다. 그러나 데이터 구조에 대한 일반적인 작업을 통해 추가된 정보를 업데이트하고 유지 관리해야하기 때문에 데이터 구조를 확장하는 것이 항상 간단한 것은 아니다.
 
@@ -95,7 +95,7 @@ int OS-RANK(T, x)
 ​	예를 들어 그림 14.1의 order stastics tree에서 OS-RANK를 실행해 38번 키가 있는 노드의 순위를 찾을 때 while 루프의 맨 위에 있는 y.key 및 r값의 다음 시퀀스를 얻는다:
 
 ```
-iteration 	y.key         r
+iteration	y.key		r
 	1		38			2
 	2		30			4
 	3		41			4
@@ -156,7 +156,7 @@ x.size = x.left.size + x.right.size + 1
 
 ​	4단게에서는 OS-SELECT 및 OS-RANK 기능을 개발했다. 결국 새로운 기능이 필요하기 때문에 처음에 데이터 구조를 강화해야한다. 때때로 새로운 기능을 개발하는 대신 기존 작업을 신속하게 처리하기 위해 추가 정보를 사용한다.
 
-
+​    
 
 > 14.3 Interval trees
 
@@ -168,7 +168,7 @@ x.size = x.left.size + x.right.size + 1
 
 **Figure 14.3** *두 개의 닫힌 구간 i와 i'에 대한 interval 삼분법. (a) i와 i'가 겹치는 경우 네 가지 상황이 있다; 각각, i.low <= i'.high 및 i'.low <= i.high (b) interval은 겹치지 않는다. i.high < i'.low (c) interval이 겹치지 않는다. i'.high < i.low*
 
-​	우리는 i.low = t1 (the **low endpoint**) 속성과 i.high = t2 (the **high endpoint**) 속성을 사용해 구간 [t1, t2]를 객체 i로 나타낸다. 우리는 *i.low <= i'.high* 와 *i'.low <= i.high* 조건을 만족하면 구간 i와 i'이 겹친다고 말한다. 그림 14.3에서 볼 수 있듯이 두 구간 i와 i'은 interval 사분법을 충족한다. 즉, 다음 세 가지 속성 중 정확히 하나가 유지된다.
+​	우리는 i.low = t1 (the **low endpoint**) 속성과 i.high = t2 (the **high endpoint**) 속성을 사용해 구간 [t1, t2]를 객체 i로 나타낸다. 우리는 *i.low <= i'.high* 와 *i'.low <= i.high* 조건을 만족하면 구간 i와 i'이 겹친다고 말한다. 그림 14.3에서 볼 수 있듯이 두 구간 i와 i'은 interval 삼분법을 충족한다. 즉, 다음 세 가지 속성 중 정확히 하나가 유지된다.
 
 1. i 와 i'은 겹친다.
 2. i는 i'의 왼쪽에 있다. (i.high < i'.low)
@@ -250,7 +250,7 @@ Tree T에 i와 겹치는 구간이 포함되어 있으면 x에서 루트가 지�
 
 ```
 i'.high <= x.left.max
-				<	 i.low
+		< i.low
 ```
 
 따라서 interval 삼분법에 의해 i'와 i는 겹치지 않는다. 따라서 x의 왼쪽 하위 트리에는 i와 겹치는 구간이 없으므로 x를 x.right로 설정하면 불변성이 유지된다.
@@ -258,15 +258,15 @@ i'.high <= x.left.max
 ​	반면에 4행이 실행되면 루프 불변성의 반대가 유지됨을 보여줄 것이다. 즉, x.left에 뿌리를 둔 서브트리가 i와 겹치는 간격을 포함하지 않으면 트리의 어느 곳에서도 i와 겹치는 간격이 없다. 4행이 실행되었으므로 3행의 분기 조건으로 인해 x.left.max >= i.low이다. 또한, max 속성의 정의에 따라 x의 왼쪽 하위 트리에는 다음과 같은 간격 i'이 포함되어야한다.
 
 ```
-i'.high =  x.left.max
-				>= i.low
+i'.high =   x.left.max
+		>= i.low
 ```
 
 (그림 14.5 (b)는 상황을 보여준다.) i와 i'는 겹치지 않고, i'.high < i.low가 사실이 아니기 때문에 i.high < i'.low라는 구간 삼분법에 따른다. Interval 트리는 간격의 낮은 끝점에 키가 지정되므로 검색 트리 속성은 x의 오른쪽 하위 트리에 있는 간격 i''에 대해 다음을 의미한다.
 
 ```
-i.high	<	 i'.low
-				<= i''.low
+i.high	<  i'.low
+		<= i''.low
 ```
 
 ​	간격 삼분법에 의해 i와 i''은 겹치지 않는다. x의 왼쪽 하위 트리의 간격이 i와 겹치는지 여부에 관계없이 x를 x.left로 설정하면 불변성이 유지된다.
