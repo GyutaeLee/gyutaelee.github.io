@@ -21,7 +21,7 @@ title                    : "q.bot development diary"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Gyutae Lee"
-description              : "개발자 이규태"
+description              : "개발자 이규태입니다."
 url                      : # the base hostname & protocol for your site e.g. "https://gyutaelee.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
