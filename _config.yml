@@ -17,7 +17,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Game Development"
+title                    : "일상에 즐거움을 주는 개발자"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Gyutae Lee"
@@ -99,7 +99,7 @@ analytics:
 # Site Author
 author:
   name             : "Gyutae Lee"
-  avatar           : "/assets/images/qbot.png"
+  avatar           : "/assets/images/profile.png"
   bio              : "개발자 이규태입니다."
   location         : "South Korea. Seoul"
   email            :
