@@ -25,23 +25,31 @@ tags:
 
 ![image-20201209202302855](../../../assets/images/Unity/Unity_XcodeBuild_02.png)
 
-​	먼저 쾌적한 환경에서 시뮬레이터를 사용하기 위해 Metal을 필수적으로 사용할 것이다(실제 게임 빌드에도 사용할 것이고). 아래 경로로 들어가서 둘 다 체크해준다.
-
 **Project Setting -> Player -> iOS -> Metal Editor Support/Metal API Validation**
 
-​	그리고 조금 더 내려가면 **Target SDK**가 있는데, Target을 **Simulator SDK**로 변경해준다.
+​	먼저 쾌적한 환경에서 시뮬레이터를 사용하기 위해 Metal을 필수적으로 사용할 것이다(실제 게임 빌드에도 사용할 것이고). 위 경로로 들어가서 둘 다 체크해준다.
+
+​    
 
 ![image-20201209202613905](../../../assets/images/Unity/Unity_XcodeBuild_03.png)
 
-​	다 설정헀다면 **command + shift + b** 를 눌러서 Build Setting를 켜준다. iOS로 플랫폼을 잡으면 아래와 같은 알림이 뜬다.
+​	그리고 조금 더 내려가면 **Target SDK**가 있는데, Target을 **Simulator SDK**로 변경해준다.
+
+​    
 
 ![image-20201209202139638](../../../assets/images/Unity/Unity_XcodeBuild_01.png)
 
+​	다 설정헀다면 **command + shift + b** 를 눌러서 Build Setting를 켜준다. iOS로 플랫폼을 잡으면 위와 같은 알림이 뜬다.
+
 ​	Metal을 사용하기 위해서는 **Xcode11 & MacOS 10.15** 이상을 맞추어야한다는 알림이다. 만약 해당 버전보다 낮으면 업그레이드를 해야한다. 모든 조건이 충족되었다면 Build를 눌러서 Xcode 빌드를 한다.
+
+​    
 
 ​	![image-20201209203354368](../../../assets/images/Unity/Unity_XcodeBuild_04.png)
 
 ​	빌드 후에는 위와 같이 여러 파일들이 있는데 이중에서 **Unity-iPhone.xcworkspace** 를 실행한다.
+
+​    
 
 ![image-20201209203538460](../../../assets/images/Unity/Unity_XcodeBuild_05.png)
 
@@ -49,15 +57,19 @@ tags:
 
 ![image-20201209204200467](../../../assets/images/Unity/Unity_XcodeBuild_07.png)
 
-<center>**iPhone 12 Pro Simulator**</center>
-
-​	Xcode를 설치할때 버전별로 기본 Simulator가 존재하는데, 특정한 OS 버전의 시뮬레이터를 설치하고 싶으면 우측의 시뮬레이터 버튼을 클릭하고, 아래와 같은 화면에서 **Add 혹은 Download** 버튼을 클릭해서 시뮬레이터를 추가 및 다운로드 해주면 된다.
-
-![image-20201209203949672](../../../assets/images/Unity/Unity_XcodeBuild_06.png)
+**iPhone 12 Pro Simulator**
 
 ​    
 
-**TIP : Unity에서 출력되던 debug log도 xcode에서 확인이 가능하다. xcode layout을 건드리지 않았다면 중앙 하단 우측 layout에서 log가 나온다.**
+​    
+
+![image-20201209203949672](../../../assets/images/Unity/Unity_XcodeBuild_06.png)
+
+​	Xcode를 설치할때 버전별로 기본 Simulator가 존재하는데, 특정한 OS 버전의 시뮬레이터를 설치하고 싶으면 우측의 시뮬레이터 버튼을 클릭하고, 아래와 같은 화면에서 **Add 혹은 Download** 버튼을 클릭해서 시뮬레이터를 추가 및 다운로드 해주면 된다.
+
+​    
+
+**tip : Unity에서 출력되던 debug log도 xcode에서 확인이 가능하다. xcode layout을 건드리지 않았다면 중앙 하단 우측 layout에서 log가 나온다.**
 
 ​    
 
