@@ -21,7 +21,7 @@ tags:
 
 > 주의사항
 
-​	우선 주의사항을 먼저 말하자면 Unity/Xcode/Mac OS 버전이 중요하다.
+​	우선 주의사항을 먼저 말하자면 Unity/Xcode/MacOS 버전이 중요하다. Unity 버전은 **2020.1.12f1**이고, 다른 버전들은 아래쪽에 천천히 나온다.
 
 ![image-20201209202302855](../../../assets/images/Unity/Unity_XcodeBuild_02.png)
 
