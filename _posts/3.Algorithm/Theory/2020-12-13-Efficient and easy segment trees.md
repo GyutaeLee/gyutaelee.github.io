@@ -26,12 +26,12 @@ Efficient and easy segment trees
 
 ![ ](..\..\..\assets\images\Algorithm\IntroductiionToAlgorithm\SegmentTree_01.png)
 
-​	표기하는 방식은 node의 index이다. 해당 세그먼트의 왼쪽 테두리는 포함이고, 오른쪽은 제외한다. 맨 아래 행에는 leaf node인 배열이 있다. 지금은 길이가 2의 거듭 제곱이라고 가정하고 완전 이진트리를 사용한다. 트리를 올라갈 때 인덱스가 있는 노드 쌍을 가져와서 부모의 값을 인덱스 i와 결합한다. 이렇게 하면 구간 [3, 11)에서 합계를 구하라는 쿼리를 받을 때 구간 내의 8개 값 모두가 아니라 19, 15, 12, 26의 값만 합산하면 된다. 구현을 보자.
+​	표기하는 방식은 node의 index이다. 해당 세그먼트의 왼쪽 테두리는 포함이고, 오른쪽은 제외한다. 맨 아래 행에는 leaf node인 배열이 있다. 지금은 길이가 2의 거듭 제곱이라고 가정하고 완전 이진트리를 사용한다. 트리를 올라갈 때 인덱스가 있는 노드 쌍을 가져와서 부모의 값을 인덱스 i와 결합한다. 이렇게 하면 구간 [3, 11)에서 합계를 구하라는 쿼리를 받을 때 구간 내의 8개 값 모두가 아니라 19, 5, 12, 26의 값만 합산하면 된다. 구현을 보자.
 
 ```c++
 const int n_LIMIT = 1e5; // limit for array size
 int n;			  // array size
-int tree[2 * N];
+int tree[2 * n_LIMIT];
 
 void build()
 {
@@ -55,13 +55,13 @@ int query(int left, int right)
 {
     int result = 0;
     
-    for (left += n, right += n, left < right; left >>=1, right >>= 1)
+    for (left += n, right += n; left < right; left >>=1, right >>= 1)
     {
         if (left & 1)
         {
             result += tree[left++];
         }        
-        else if (right & 1)
+        if (right & 1)
         {
             result += tree[--right];
         }
@@ -137,7 +137,7 @@ left & 1 => add tree[7], 테두리가 left = 4, right = 5.로 변경되고, 노�
 ```c++
 void modify(int left, int right, int value)
 {
-    for (left += n, right += n; left < r; left >>= 1, right >>= 1)
+    for (left += n, right += n; left < right; left >>= 1, right >>= 1)
     {
         if (left & 1)
         {
@@ -197,26 +197,26 @@ void modify(int position, const S& value)
     {
         tree[position] = combine(tree[position<<1], tree[position<1|1]);
     }
+}
     
-    S query(int left, int right)
-    {
-        S resultLeft, resultRight;
+S query(int left, int right)
+{
+	S resultLeft, resultRight;
         
-        for (left += n, right += n; left < r; left >>=1, right >>=1)
-        {
-            if (left & 1)
-            {
-                resultLeft = combine(resultLeft, tree[left++]);
-            }
+	for (left += n, right += n; left < r; left >>=1, right >>=1)
+	{
+		if (left & 1)
+		{
+			resultLeft = combine(resultLeft, tree[left++]);
+		}
             
-            if (right & 1)
-            {
-                rresultRight = combine(tree[--right], resultRight);
-            }
-        }
+		if (right & 1)
+		{
+			resultRight = combine(tree[--right], resultRight);
+		}
+	}
         
-        return combine(resultLeft, resultRight);
-    }
+	return combine(resultLeft, resultRight);
 }
 ```
 
