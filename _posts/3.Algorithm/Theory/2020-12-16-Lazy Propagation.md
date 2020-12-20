@@ -1,5 +1,5 @@
 ---
-title: "Segment Tree - Lazy Propagation"
+title: "Efficient and easy segment trees - Lazy Propagation"
 excerpt: "느리게 갱신되는 세그먼트 트리(Segment Tree - Lazy Propagation)"
 
 categories:
