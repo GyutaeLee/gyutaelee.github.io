@@ -170,8 +170,8 @@ void LPSegmentTree::Input(int treeSize)
 {
     this->treeSize = treeSize;
     this->treeHeight = sizeof(int) * 8 - __builtin_clz(treeSize);
-    this->tree.resize(this->treeSize * 4);
-    this->d.resize(this->treeSize * 4);
+    this->tree.resize(this->treeSize * 2);
+    this->d.resize(this->treeSize);
 
     for (int i = 0; i < this->treeSize; i++)
     {
