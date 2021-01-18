@@ -13,7 +13,7 @@ tags:
 
 > 시작하면서
 
-​	모바일 플랫폼에서 개발하면 반드시 대응해야하는게 기기의 노치 디자인이다. 새로 나오는 기기들은 대부분 노치 디자인을 가지고 있기 때문에 필수로 대응을 해야한다. Unity에서는 **Screen.SafeArea** 를 사용해서 노치 디자인에 대한 UI 대응을 쉽게 할 수 있다.
+​	모바일 플랫폼에서 개발하면 반드시 대응해야하는 부분이 기기의 **노치 디자인**이다. 요즘 새로 나오는 기기들은 대부분 노치 디자인을 가지고 있기 때문에 필수로 대응을 해야한다. Unity에서는 **Screen.SafeArea** 를 사용해서 노치 디자인에 대한 UI 대응을 쉽게 할 수 있다.
 
 **[Unity 공식 링크](https://connect.unity.com/p/updating-your-gui-for-the-iphone-x-and-other-notched-devices)**
 
@@ -57,13 +57,10 @@ public class UISafeAreaManager : MonoBehaviour
 
 ​    
 
-<center>
 
 ![스크린샷 2021-01-18 오후 4.32.45](../../../assets/images/Unity/Unity_Screen_Safe_Area_01.png)
 
 **Safe Area가 적용된 모습**
-
-</center>
 
 ​    
 
