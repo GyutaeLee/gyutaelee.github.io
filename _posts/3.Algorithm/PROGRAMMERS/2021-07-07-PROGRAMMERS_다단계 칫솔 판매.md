@@ -56,13 +56,13 @@ void CalculateSavedProfit(unordered_map<string, vector<int>>& profitMap, string 
 	for (int i = 0; i < profitMap[sellerName].size(); i++)
 	{
 		int savedProfit = profitMap[sellerName][i];
+		int seniorProfit = savedProfit * 0.1f;
 
-		if (savedProfit * 0.1f < 1)
+		if (seniorProfit < 1)
 		{
 			continue;
 		}
 
-		int seniorProfit = savedProfit * 0.1f;
 		int sellerProfit = savedProfit - seniorProfit;
 
 		profitMap[sellerName][i] = sellerProfit;
@@ -75,16 +75,16 @@ void CaculateSalesProfit(unordered_map<string, vector<int>>& profitMap, unordere
 	for (int i = 0; i < sellerMap[sellerName].size(); i++)
 	{
 		int totalProfit = sellerMap[sellerName][i] * SALE_PROFIT;
+		int seniorProfit = totalProfit * 0.1f;
 		int sellerProfit = 0;
-		int seniorProfit = 0;
-		if (totalProfit * 0.1f < 1)
+
+		if (seniorProfit < 1)
 		{
 			sellerProfit = totalProfit;
 			seniorProfit = 0;
 		}
 		else
-		{
-			seniorProfit = totalProfit * 0.1f;
+		{			
 			sellerProfit = totalProfit - seniorProfit;
 		}
 
