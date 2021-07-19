@@ -1,6 +1,6 @@
 ---
 title: "PROGRAMMERS 프로그래머스 : 다단계 칫솔 판매"
-excerpt: "DFS/BFS & Map"
+excerpt: "깊이우선탐색/너비우선탐색 & 맵(DFS/BFS & Map)"
 
 categories:
 - Algorithm
