@@ -19,31 +19,31 @@ tags:
 
 ​	먼저 패키지 다운로드가 필요하다. **Window -> Package Manager -> Test Framework**를 Import한다. (나중에 사용할 **Code Coverage**도 미리 설치해도 좋다)
 
-![image-20210929155538330](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_01.png)
+![image-20210929155538330](../../../assets\images\Unity\Unity_TestRunner_01.png)
 
 ​	설치 후에는 **Window -> General -> Test Runner**로 접근해서 Test Runner를 실행한다.
 
-![image-20210929155855923](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_02.png)
+![image-20210929155855923](../../../assets\images\Unity\Unity_TestRunner_02.png)
 
 ​	실행하면 위와 같은 화면이 뜬다. 상단을 보면 **PlayMode**와 **EditMode**가 있다. PlayMode에서는 게임 관련 테스트를 진행하고, EditMode에서는 커스텀 에디터 테스트가 가능하다. [관련 링크](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/edit-mode-vs-play-mode-tests.html)
 
 ​	이 글에서는 PlayMode만 설명하겠다. PlayMode를 들어가서 **Create PlayMode Test Assembly Folder** 버튼을 클릭해준다.
 
-![image-20210929161359746](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_03.png)
+![image-20210929161359746](../../../assets\images\Unity\Unity_TestRunner_03.png)
 
 ​	그럼 다음과 같이 Assembly Folder가 자동으로 생성된다. Assembly에 대해 잘 모른다면 [해당 링크](https://docs.unity3d.com/kr/2019.4/Manual/ScriptCompilationAssemblyDefinitionFiles.html)를 한 번 읽고 오는 것을 추천한다.
 
-![image-20210929161618524](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_04.png)
+![image-20210929161618524](../../../assets\images\Unity\Unity_TestRunner_04.png)
 
-![image-20210929161754467](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_05.png)
+![image-20210929161754467](../../../assets\images\Unity\Unity_TestRunner_05.png)
 
 ​	위와 같은 파일이 생기는데 지금은 우선 넘어가겠다. (궁금하면 가장 하단에 있는 링크 참조)
 
-![image-20210929161843609](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_06.png)
+![image-20210929161843609](../../../assets\images\Unity\Unity_TestRunner_06.png)
 
 ​	다시 Test Runner로 돌아오면 **Create Test Script in current folder**라는 버튼이 생겨있다. 이 버튼을 클릭하면 스크립트가 하나 생성된다.
 
-![image-20210929161922107](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_07.png)
+![image-20210929161922107](../../../assets\images\Unity\Unity_TestRunner_07.png)
 
 ​	해당 스크립트를 열어보면 다음과 같은 코드가 있다.
 
@@ -83,7 +83,7 @@ public class NewTestScript
 
 ​	여기서 다시 Test Runner로 돌아오면 작성된 테스트 함수들이 보인다.
 
-![image-20210929162143097](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_08.png)
+![image-20210929162143097](../../../assets\images\Unity\Unity_TestRunner_08.png)
 
 ​	테스트 방법은
 
@@ -94,7 +94,7 @@ public class NewTestScript
 
 ​	**1~3**은 에디터에서 테스트가 진행되고, **4**는 빌드 후 해당 플랫폼에서 테스트가 진행된다.
 
-![image-20210929162713297](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_TestRunner_09.png)
+![image-20210929162713297](../../../assets\images\Unity\Unity_TestRunner_09.png)
 
 ​	테스트 진행 후에는 별 다른 문제가 없으면 위와 같이 체크 표시가 뜨고, 문제가 있으면 빨갛게 경고 표시가 뜬다.
 
