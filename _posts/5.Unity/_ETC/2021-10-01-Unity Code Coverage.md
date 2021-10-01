@@ -31,11 +31,11 @@ tags:
 
 ​	Unity를 재시작한 후에는 **Start Recording** 버튼이 활성화 되어있다. 해당 버튼을 누르고 **Test Runner**에서 테스트를 진행하고, 끝난 후 **Stop Recroding**버튼을 누른다.
 
-![image-20211001130726917](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_CodeCoverage_03.png)
+![image-20211001130726917](../../..\assets\images\Unity\Unity_CodeCoverage_03.png)
 
 ​	그럼 폴더가 하나 생긴다. 여러 파일이 있는데 그 중에서 **index**를 실행한다.
 
-![image-20211001130837732](C:\Users\134461\Desktop\_GIT-PROJECT\gyutaelee.github.io\assets\images\Unity\Unity_CodeCoverage_04.png)
+![image-20211001130837732](../../..\assets\images\Unity\Unity_CodeCoverage_04.png)
 
 ​	해당 파일을 실행하면 테스트 결과를 볼 수 있다. 
 
