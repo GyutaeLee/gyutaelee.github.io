@@ -92,7 +92,7 @@ Tags:
 
 ![Quaternion_13](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_13.PNG)
 
-|q|로 표시되는 쿼터니언 q의 노말은, 스칼라 |q| = √(q∗q)이다. 쿼터니언은 노말이 1인 경우 단위 쿼터니언이라고 한다. 두 쿼터니언 p와 q의 노말은 개별 노말의 곱이다. 그래서 우리는 다음을 알 수 있다.
+\|q\|로 표시되는 쿼터니언 q의 노말은, 스칼라 \|q\| = √(q∗q)이다. 쿼터니언은 노말이 1인 경우 단위 쿼터니언이라고 한다. 두 쿼터니언 p와 q의 노말은 개별 노말의 곱이다. 그래서 우리는 다음을 알 수 있다.
 
 ![Quaternion_14](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_14.PNG)
 
