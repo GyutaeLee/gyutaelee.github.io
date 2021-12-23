@@ -110,13 +110,13 @@ $$q^-1q = qq^-1 = 1$$. $$q$$가 단위 쿼터니언인 경우 역함수는 켤�
 
 > Quaternion Rotation Operator
 
-​	$$\mathbb{R}^4$$​​에 있는 쿼터니언이 $$\mathbb{R}^3$$​​에 있는 벡터에서 어떻게 작동할 수 있을까? 먼저, 벡터 **v ∈ *$$\mathbb{R}^3$$​​*은 실수부가 0인 순수 쿼터니언이다. 단위 쿼터니언 **$$q = q_0 + q$$​만 고려하자. $${q_0}^2 + ||q||^2 = 1$$​은 다음과 같은 angle $$\theta$$​​ 가 있어야 함을 의미한다.
+​	$$\mathbb{R}^4$$​​​​에 있는 쿼터니언이 $$\mathbb{R}^3$$​​​​에 있는 벡터에서 어떻게 작동할 수 있을까? 먼저, 벡터 v ∈ $$\mathbb{R}^3$$​​​​은 실수부가 0인 순수 쿼터니언이다. 단위 쿼터니언 $$q = q_0 + q$$만 고려하자. $${q_0}^2 + ||q||^2 = 1$$은 다음과 같은 angle $$\theta$$​​ 가 있어야 함을 의미한다.
 
 ![Quaternion_16](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_16.PNG)
 
 
 
-실제로 **$$\cos \theta$$​​​ = $$q_0$$​​​ , $$\sin \theta$$​​​​ = ||q||**인 고유한 **$$\theta \in [0, \pi]$$​**​​​ 구간이 존재한다. 단위 쿼터니언은 이제 **angle $$\theta$$​​​​**와 단위 벡터 $$u = q/||q||$$​로 작성할 수 있다:
+실제로 $$\cos \theta$$​​​​​​​ = $$q_0$$​​​​​​​ , $$\sin \theta  ||q||$$​인 고유한 $$\theta \in [0, \pi]$$​ 구간이 존재한다. 단위 쿼터니언은 이제 angle $$\theta$$​와 단위 벡터 $$u = q/||q||$$​​​​​​로 작성할 수 있다:
 
 ![Quaternion_17](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_17.PNG)
 
@@ -231,3 +231,121 @@ EXAMPLE 3.  이제 쿼터니언 방법을 사용해 "Space Rotations"라는 제�
 ![Quaternion_40](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_40.PNG)
 
 해당 섹션의 회전 축과 각도는 tracking frame의 좌표를 station frame의 좌표로 변환한다. 이것은 (7)의 축 $$v$$가 해당 섹션에서 얻은 것과 반대인 반면 각도는 동일한 이유를 설명한다.
+
+​    
+
+> Application: 3-D Shape Registration
+
+​	모델 기반 인식의 중요한 문제는 shape model에 대해 이러한 점을 가장 잘 일치시키는 데이터 점 세트의 변환을 찾는 것이다. 이 프로세스를 종종 data registration이라고 한다. data point는 일반적으로 range sensors, touch sensors 등에 의해 실제 물체에서 측정되며, cartesian 좌표(데카르트 좌표)로 제공된다. quality of match는 종종 data point에서 model까지의 총 제곱 거리로 설명된다. 여러 shape model이 가능한 경우 총 거리가 가장 작은 모델이 물체의 모양으로 인식된다.
+
+​	쿼터니언은 위의 최소 제곱 기반 registration 문제를 해결하는 데 매우 효과적이다. 3D로 문제를 공식화하는 것부터 시작하자. $$\{p_1, p_2, ... , p_3 \}$$는 data point의 집합이다. 우리는 $p_1,...,p_n$​가 shape model의 점 $q_1,...,q_n$​과 일치한다고 가정한다. 즉, data point와 model의 data point 간의 대응이 미리 결정되었다. 그런 다음 문제는 $det(R) = 1$​인 직교 행렬 $R$로 표시되는 회전과 다음 최소화에 대한 솔루션으로 translation $b$​를 찾는 것이다.
+
+![Quaternion_41](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_41.PNG)
+
+우리는 두 점 세트의 중심을 계산하는 것으로 시작한다:
+
+![Quaternion_42](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_42.PNG)
+
+모든 점의 중심에 대한 상대 좌표는 $1<i\leq n$에 대해 다음과 같이 얻는다.
+
+![Quaternion_43](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_43.PNG)
+
+다음과 같은 식을 얻는다.
+
+![Quaternion_44](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_44.PNG)
+
+(8)의 objective function을 $\overline{p}, \overline{q}, p_i', q_i'$를 사용해 다시 작성해보자:
+
+![Quaternion_45](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_45.PNG)
+
+translation $b$를 최소화하면 마지막 방정식의 두 번째 향이 0보다 커야 하므로 다음을 산출한다:
+
+![Quaternion_46](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_46.PNG)
+
+따라서 우리는 data registration 문제를 두 단계로 분해했다. 첫 번째 단계는 방정식 (11)에 의해 주어진 최적의 translation을 결정하고, 두 번째 단계는 set $\{p_i\}$의 최적 회전을 결정한다. 모든 포인트 $p_i$는 $q_i$와 일치하기 전에 $R(p_i - \overline p) + \overline q$로 변환된다. 동등하게, 두 점 집합 $\{p_i\}$와 $\{q_i\}$의 가장 좋은 일치를 찾기 위해 먼저 $\{p_i\}$를 변환해 중심이 $\{q_i\}$의 중심과 일치하도록 한 다음 공통 중심을 중심으로 회전한다.
+
+지금까지의 추론에 따르면 최적 회전은 다음 공식으로 풀 수 있다.
+
+![Quaternion_47](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_47.PNG)
+
+여기서 우리는 쿼터니언을 사용해 [3]에 설명된 대로 (12)에 대한 정확한 솔루션을 제시한다. equivalent 쿼터니언 기반 솔루션은 [2]에 나와있다. 점별 대응을 가정하는 두 개의 곡선(또는 표면)을 일치시키는 버전은 쿼터니언을 사용하지 않고, 다소 유사한 방식으로 [8]에서 정확히 해결된다.
+
+먼저 (12)의 합을 다음과 같이 다시 작성한다:
+
+![Quaternion_48](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_48.PNG)
+
+위의 마지막 방정식의 첫 번째 명사는 회전에 의존하지 않으므로 두 번째 명사만 최소화하면 된다. 동일하게 이것은 최대화를 통해 수행할 수 있다.
+
+![Quaternion_49](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_49.PNG)
+
+회전 행렬 $R$에는 9개의 항목이 있으며 그 중 4개만 $R$의 직교성과 단위 결정자로 인해 독립적이다. 대신 단위 쿼터니언을 사용해 회전을 나타낸다. 본질적으로, 우리는 최대화하는 단위 쿼터니언 $q$를 찾는다.
+
+![Quaternion_50](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_50.PNG)
+
+여기에서 우리는 쿼터니언을 $$\mathbb{R}^4$$​에 있는 벡터로 본다. $q = (q_0,q_1,q_2,q_3)^T$​,  $q^* = (q_0, -q_1,-q_2,-q_3)^T$​라고 가정하자. 또한, 점 $p_1',...,p_n'$​ 그리고 $q_1',...,q_n'$​은 표기법 남용을 더해 $p_i' = (0, p_{i1}', p_{i2}', p_{i3}')^T$​ 그리고 $q_i' = (0, q_{i1}',q_{i2}',q_{i3}')^T$​ 로 나타난다.
+
+쿼터니언 곱의 정의를 적용하면 다음을 나타내는 것이 어렵지 않다.
+
+![Quaternion_51](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_51.PNG)
+
+다음으로 (14)의 명사를 행렬 곱으로 다시 작성하려고 한다. 이를 위해 행렬을 정의한다
+
+![Quaternion_52](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_52.PNG)
+
+$1\leq i\leq n$​에 대해. 그러면 쿼터니언 곱 $qp_i'$ 및 $q_i'q$는 행렬 곱 $P_iq$ 및 $Q_iq$와 동일하다. 따라서 우리는
+
+![Quaternion_53](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_53.PNG)
+
+![Quaternion_54](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_54.PNG)
+
+각 행렬 $P_i^TQ_i$가 대칭인지 확인하는 것은 쉽다. 4x4 행렬도 마찬가지이다.
+
+![Quaternion_55](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_55.PNG)
+
+따라서 M은 실수 고유값만을 갖는다.  $\lambda_1 \geq \lambda_2 \geq \lambda_3 \geq \lambda_4$​  의 조건을 가진  $\lambda_1,\lambda_2,\lambda_3,\lambda_4$​가 있다. $v_1,v_2,v_3,v_4$
+
+를 해당 직교 단위 고유 벡터라고 하자. 서로 다른 고유값에 해당하는 고유 벡터는 서로 직교해야 한다. 동일한 고유값에 해당하는 다중 고유 벡터는 서로 직교하도록 선택된다. 쿼터니언 $q$는 다음 고유 벡터의 선형 조합이다.
+
+![Quaternion_56](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_56.PNG)
+
+다음 식을 얻을 수 있다
+
+![Quaternion_57](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_57.PNG)
+
+곱 $q^TMq$는 $\alpha_1 = 1, \alpha_2 = \alpha_3 = \alpha_4 = 0$​일 때 최대 값을 달성한다. 따라서 (14)를 최대화하는 단위 쿼터니언 q는 행렬 M의 최대 고유값에 해당하는 고유 벡터이다. (for data registration)
+
+​	대응하는 점 $q_1,...,q_2$가 알려지지 않은 경우, Iterative Closet Point(CIP) [1]라고 하는 잘 알려진 방법이 registration 문제를 해결한다. 주어진 data point set $\{p_1,...,p_n\}$, ICP 알고리즘은 초기 대응 점 $q_1^{(0)},...,q_n^{(0)}$은 surface 모델에서 $p_1^{(0)} = p_q,...,p_n^{(0)}$에 각각 가장 가까운 점이다. 그런 다음 도입된 쿼터니언 기반 방법을 적용해 $\{p_i^{(0)}\}$와 $\{q_i^{(0)}\}$가 가장 잘 일치하는 회전 및 변환을 결정한다. 두 번째 반복은 방금 발견된 변환을 모든 $p_i^{(0)}$에 적용해  $p_i^{(1)}$을 얻은 다음 모델에서 해당하는 새로운 점 $q_i^{(1)}$를 $p_i^{(1)}$​에 가장 가까운 점으로 결정한다. 쿼터니언 등을 사용해 최상의 회전 및 변환을 다시 계산한다. 새 translation의 변경이 충분히 작아지면 알고리즘이 중지된다.
+
+​    
+
+> Other Application of Quaternions
+
+​	물리학에서 쿼터니언은 양자 역학 수준에서 우주의 본질과 상관 관계가 있다. 그것들은 현대 상대성 이론의 기초를 형성하는 로렌츠 변환의 우아한 표현으로 이어진다. 신호 처리에서 QFT(Quaternion Fourier Transform)는 강력한 도구이다. QFT는 더 이상 나눗셈 대수가 아닌 비용으로 손실된 교환 속성을 복원한다. 예를 들어 컬러 이미지에 워터마크를 삽입하는 데 사용할 수 있다. QFT의 다른 응용 프로그램에는 얼굴 인식(Quaternion Wavelet Transform과 함께) 및 음성 인식이 포함된다 [6].
+
+​    
+
+> Quaternions vs Homogeneous Coordinates
+
+​	배율 조정 및 회전과 함께 변환을 곱하기 위해 homogeneous 좌표가 도입되었다. point, line, plane 등을 표현하는데 편리하며, 투영법 연구의 기초가 된다. 쿼터니언과 마찬가지로 homogeneous 좌표는 4-tuple이다. 이것은 일종의 쿼터니언 연산자를 사용해 scailing 및 translation을 수행하는 방법이 있을 수 있음을 시사한다. 현재로서는 쿼터니언과 그 회전 연산자가 대수적으로 homogeneous 좌표와 호환되지 않는 방식이 발견되지 않았다.
+
+​    
+
+​    
+
+**References**
+
+- [1] P. J. Besl and N. D. McKay. A method for registration of 3-D shapes. IEEE Transactions on
+  pattern analysis and machine intelligence, 14(2):239–256, 1992.
+- [2] O. D. Faugeras and M. Hebert. The representation, recognition, and locating of 3-D objects.
+  International Journal of Robotics Research, 5(3):27–52, 1986.
+- [3] B. K. P. Horn. Closed-form solution of absolute orientation using unit quaternions. Journal of
+  Optical Society of America A, 4(4):629–642, 1987.
+- [4] T. W. Hungerford. Algebra. Springer-Verlag, 1974.
+- [5] N. Jacobson. Basic Algebra. W. H. Freeman & Co.,1985.
+- [6] S. Oldenburger. Applications of Quaternions. Written project of the course “Problem Solving
+  Techniques in Applied Computer Science” (Com S 477/577), Department of Computer Science,
+  Iowa State University, 2005.
+- [7] J. B. Kuipers. Quaternions and Rotation Sequences. Princeton University Press, 1999.
+- [8] J. T. Schwartz and M. Sharir. Identification of partially obscured objects in two and three
+  dimensions by matching noisy characteristic curves. International Journal of Robotics Research,
+  6(2):29–44, 1987.
