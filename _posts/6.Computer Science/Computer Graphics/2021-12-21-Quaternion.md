@@ -34,7 +34,7 @@ Tags:
 - j = (0, 1, 0)
 - k = (0, 0, 1)
 
-로 지정된다. Quaternion $q$$ 는 스칼라 $$q_0$$와 벡터 $$q = (q_1, q_2, q_3)$$​의 합으로 정의된다.
+로 지정된다. Quaternion $q$​ 는 스칼라 $q_0$와 벡터 $q = (q_1, q_2, q_3)$​​의 합으로 정의된다.
 
 ![Quaternion_02](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_02.PNG)
 
@@ -96,7 +96,7 @@ Tags:
 
 ![Quaternion_13](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_13.PNG)
 
-$|q|$​​로 표시되는 쿼터니언 $q$​의 노말은, 스칼라 $\|q\| = \sqrt{q∗q}$​이다. 쿼터니언은 노말이 1인 경우 단위 쿼터니언이라고 한다. 두 쿼터니언 $p$​와 $q$​의 노말은 개별 노말의 곱이다. 그래서 우리는 다음을 알 수 있다.
+$|q|$​​​​로 표시되는 쿼터니언 $q$​​​의 노말은, 스칼라 $|q| = \sqrt{q∗q}$​​​이다. 쿼터니언은 노말이 1인 경우 단위 쿼터니언이라고 한다. 두 쿼터니언 $p$​​​와 $q$​​​의 노말은 개별 노말의 곱이다. 그래서 우리는 다음을 알 수 있다.
 
 ![Quaternion_14](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_14.PNG)
 
@@ -110,13 +110,13 @@ $q^-1q = qq^-1 = 1$. $q$가 단위 쿼터니언인 경우 역함수는 켤레 $q
 
 > Quaternion Rotation Operator
 
-​	$\mathbb{R}^4$​​​​에 있는 쿼터니언이 $\mathbb{R}^3$​​​​에 있는 벡터에서 어떻게 작동할 수 있을까? 먼저, 벡터 v ∈ $\mathbb{R}^3$​​​​은 실수부가 0인 순수 쿼터니언이다. 단위 쿼터니언 $q = q_0 + q$만 고려하자. ${q_0}^2 + ||q||^2 = 1$은 다음과 같은 angle $\theta$​​ 가 있어야 함을 의미한다.
+​	$\mathbb{R}^4$​​​​​에 있는 쿼터니언이 $\mathbb{R}^3$​​​​​에 있는 벡터에서 어떻게 작동할 수 있을까? 먼저, 벡터 v ∈ $\mathbb{R}^3$​​​​​은 실수부가 0인 순수 쿼터니언이다. 단위 쿼터니언 $q = q_0 + q$​만 고려하자. ${q_0}^2 + \|q\|^2 = 1$​은 다음과 같은 angle $\theta$​​​ 가 있어야 함을 의미한다.
 
 ![Quaternion_16](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_16.PNG)
 
 
 
-실제로 $\cos \theta$​​​​​​​ = $q_0$​​​​​​​ , $\sin \theta  ||q||$​인 고유한 $\theta \in [0, \pi]$​ 구간이 존재한다. 단위 쿼터니언은 이제 angle $\theta$​와 단위 벡터 $u = q/||q||$​​​​​​로 작성할 수 있다:
+실제로 $\cos \theta$​​​​​​​​​ = $q_0$​​​​​​​​​ , $\sin \theta  \|q\|$​​​인 고유한 $\theta \in [0, \pi]$​​​ 구간이 존재한다. 단위 쿼터니언은 이제 angle $\theta$​​​와 단위 벡터 $u = q/\|q\|$​​​​​​​​로 작성할 수 있다:
 
 ![Quaternion_17](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_17.PNG)
 
@@ -152,7 +152,7 @@ $v$에 대한 것은 회전 축으로서 $u$에 대한 각도를 통한 벡터�
 
 ![Quaternion_24](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_24.PNG)
 
-위의 마지막 단계에서 $u = q/||q||$ 를 소개했다. $n\perp = u \times n$을 나타낸다. 그래서 마지막 방정식은 다음과 같다.
+위의 마지막 단계에서 $u = q/\|q\|$​ 를 소개했다. $n\perp = u \times n$​을 나타낸다. 그래서 마지막 방정식은 다음과 같다.
 
 ![Quaternion_25](../../..\assets\images\Computer Science\Computer Graphics\Quaternion_25.PNG)
 
@@ -196,7 +196,7 @@ $v$는 회전하지 않는 동안 각도를 통해 축 $u$에 대한 좌표 프�
 
 동일하게, 연산자 $L_{q^*}$는 $q$에 대한 각 $-\theta$를 통해 좌표 프레임에 대해 벡터 $v$를 회전한다.​
 
-​	쿼터니언 연산자 $L_q(v) = qvq^*$ 는 (고정된) 좌표 프레임에 대한 점 또는 벡터 회전으로 해석될 수 있다. 쿼터니언 연산자 $L_{q^*}(v) = q^*vq$ 는 (고정된) 점의 공간에 대한 좌표 프레임 회전으로 해석될 수 있다.
+​	쿼터니언 연산자 $L_q(v) = qvq^{*}$​​​ 는 (고정된) 좌표 프레임에 대한 점 또는 벡터 회전으로 해석될 수 있다. 쿼터니언 연산자 $L_{q^{*}}(v) = q^{*}vq$​​​ 는 (고정된) 점의 공간에 대한 좌표 프레임 회전으로 해석될 수 있다.
 
 ​    
 
