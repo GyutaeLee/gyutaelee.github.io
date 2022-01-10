@@ -117,10 +117,6 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://gyutts.tistory.com"
       
-    - label: "Portfolio"
-      icon: "fas fa-fw fa-link"
-      url: "https://gyutaelee.notion.site/Portfolio-6f906369f4024afca5b7e24a723b75a2"  
-      
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       
