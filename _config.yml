@@ -108,6 +108,10 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: mailto:gyutae07@gmail.com
+
+    - label: "LinkedIn"
+      icon: "fas fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/gyutaelee/"
       
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
